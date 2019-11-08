@@ -47,7 +47,9 @@ export const editTodo = (id, formValues) => async dispatch => {
 export const completeTodo = (id) => async dispatch => {
     await todos.delete(`/todo/${id}`);
 
-    dispatch({type:COMPLETE_TODO, payload: id })
+    dispatch({type:COMPLETE_TODO, payload: id });
+    history.push('/');
+
 };
 
 
