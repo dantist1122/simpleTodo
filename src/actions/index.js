@@ -38,9 +38,10 @@ export const fetchTodo = (id) => async dispatch => {
 };
 
 export const editTodo = (id, formValues) => async dispatch => {
-    const response = await todos.put(`/todo/${id}`, formValues);
+    const response = await todos.patch(`/todo/${id}`, formValues);
 
-  dispatch({type:EDIT_TODO, payload:response.data})
+  dispatch({type:EDIT_TODO, payload:response.data});
+    history.push('/');
 };
 
 export const completeTodo = (id) => async dispatch => {
