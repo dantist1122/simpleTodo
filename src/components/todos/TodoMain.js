@@ -15,9 +15,9 @@ class TodoMain extends React.Component {
                     <Link to={`/todo/edit/${todo.id}`} className='ui button primary' >
                         Edit
                     </Link>
-                    <button className='ui button negative'>
+                    <Link to={`/todo/delete/${todo.id}`} className='ui button negative'>
                         Complete
-                    </button>
+                    </Link>
                 </div>
             )
         }

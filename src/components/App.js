@@ -17,7 +17,7 @@ const App = () => {
                     <Route path='/' exact component={Body}/>
                     <Route path='/todo/create' exact component={TodoCreate}/>
                     <Route path='/todo/edit/:id' exact component={TodoEdit}/>
-                    <Route path='/todo/delete' exact component={TodoDelete}/>
+                    <Route path='/todo/delete/:id' exact component={TodoDelete}/>
                 </div>
             </Router>
         </div>
