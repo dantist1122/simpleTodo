@@ -1,5 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import {connect} from 'react-redux';
+import {createTodo} from "../../actions";
 
 class TodoCreate extends React.Component {
 renderError({error, touched}) {
@@ -26,9 +28,9 @@ renderError({error, touched}) {
         )
     };
 
-    onSubmit(formValues) {
-        console.log(formValues);
-    }
+    onSubmit = (formValues) => {
+        this.props.createTodo(formValues);
+    };
 
     render() {
         return (
@@ -64,10 +66,10 @@ const validate = (formValues) => {
 };
 
 
-export default reduxForm({
+ const formWrapped =  reduxForm({
     form: 'CreateTodo',
     validate
 })(TodoCreate);
 
-
+export default connect(null, {createTodo})(formWrapped)
 
